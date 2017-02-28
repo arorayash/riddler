@@ -1,3 +1,4 @@
 import style from "./styles.css";
+import canvas from "./canvas";
 
-console.log("Hello dol");
+
