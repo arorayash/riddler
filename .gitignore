@@ -1,0 +1,7 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/modules.xml
+.idea/riddler17.iml
+.idea/workspace.xml
+/node_modules
+/dist
