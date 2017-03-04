@@ -1,7 +1,11 @@
 var obj = {
-	temp: 200,
 	c: function () {
 		//console.log(this);
+		/*
+		window.onclick = () => {
+			document.querySelector("button").classList.add("spread");
+		}
+		*/
 
 		const canvas = document.getElementById("canvas-element");
 
@@ -12,11 +16,11 @@ var obj = {
 		var bh_entities = {};
 		var bh_entitiesIndex = 0;
 		var bh_entitiesAmount = 12000;
+		var start = document.getElementById("apparatus");
 		const context = canvas.getContext("2d");
 
 		var mode;
-
-		var temp = 500;
+		var temp = 400;
 
 		const requestFrame = window.requestAnimationFrame ||
 			window.webkitRequestAnimationFrame ||
@@ -37,11 +41,7 @@ var obj = {
 			this.width = 1;
 			this.height = 1;
 			this.orbit = orbit;
-			this.temp = 500;
 
-			window.onclick = () => {
-				this.temp = 300;
-			}
 
 			this.velocity = Math.floor((Math.random() * 3200) + 2500);
 
@@ -53,7 +53,9 @@ var obj = {
 
 			var rands = [];
 			rands.push(Math.random() * 100 + 100);
-			rands.push(Math.random() * 10 + this.temp);
+			rands.push(Math.random() * 10 + temp);
+
+
 
 			var choice2 = Math.random() * 4;
 
@@ -92,6 +94,11 @@ var obj = {
 				this.alpha = 0.9;
 			}
 			//this.distance= this.distance + 5;
+			/*
+			window.onclick = () => {
+				this.color = "255, 0, 0";
+			}
+			*/
 
 			this.angle += this.increase;
 
