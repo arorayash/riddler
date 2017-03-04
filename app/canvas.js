@@ -37,6 +37,11 @@ var obj = {
 			this.width = 1;
 			this.height = 1;
 			this.orbit = orbit;
+			this.temp = 500;
+
+			window.onclick = () => {
+				this.temp = 300;
+			}
 
 			this.velocity = Math.floor((Math.random() * 3200) + 2500);
 
@@ -48,13 +53,13 @@ var obj = {
 
 			var rands = [];
 			rands.push(Math.random() * 100 + 100);
-			rands.push(Math.random() * 10 + temp);
+			rands.push(Math.random() * 10 + this.temp);
 
 			var choice2 = Math.random() * 4;
 
 			var rands2 = [];
 			rands2.push(Math.random() * 180 + 1);
-			rands2.push(Math.random() * 180 + 101);
+			rands2.push(Math.random() * 180 + 80);
 
 			this.distance = (rands.reduce((p, c) => {
 				return p + c;

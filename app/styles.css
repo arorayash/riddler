@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 :root{
-  --grey : #fff;
+    --grey : #fff;
+    --green : #9defed;
+    --blue : #000a42;
+    --white : #fff;
 }
 
 body{
-    background: var(--grey);
+    background: var(--blue);
     padding:0;
     margin:0;
-    background: #000a42;
+    height:100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: 'Montserrat';
 }
 
 canvas{
@@ -31,7 +39,6 @@ canvas{
     display: flex;
     z-index: 1;
     color: #fff;
-    border: 1px solid #000a42;
     width: 100vw;
     height:100vh;
     overflow: hidden;
@@ -69,16 +76,61 @@ canvas{
 
 .main-content{
     display: flex;
-    top:25vh;
-    height: 40vh;
+    height: 50vh;
     width: 40vh;
-    border: 1px solid #8EEDE8;
+    top: -20px;
+    border: 1px solid var(--green);
     padding: 20px;
     flex-direction:column;
+    position: relative;
+    left: -25vh;
+}
+
+.organizer{
+    position: absolute;
+    bottom:30px;
+    right: 30px;
+}
+
+.organizer span{
+    color: white;
 }
 
 h4{
     margin:0;
+    padding: 30px 0;
+    width: 70%;
+}
+
+button{
+    width: 30%;
+    background: #fff;
+}
+
+@media screen and (max-width: 1600px) {
+    .main-content{
+        display: flex;
+        height: 50vh;
+        width: 40vh;
+        border: 1px solid var(--green);
+        padding: 20px;
+        flex-direction:column;
+        position: relative;
+        left: -15vh;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .main-content{
+        display: flex;
+        height: 50vh;
+        width: 40vh;
+        border: 1px solid var(--green);
+        padding: 20px;
+        flex-direction:column;
+        position: relative;
+        left:0;
+    }
 }
 
 
