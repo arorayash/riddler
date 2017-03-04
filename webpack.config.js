@@ -42,6 +42,9 @@ module.exports = {
 		}, {
 			test: /\.css$/,
 			loader: 'style!css?modules&localIdentName=[local]'
+		}, {
+			test : /\.(jp?g|png|gif|svg)$/i,
+			loader : "file-loader?name=/public/media/[name].[ext]"
 		}]
 	}
 };

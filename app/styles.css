@@ -3,26 +3,82 @@
 }
 
 body{
- background: var(--grey);
- padding:0;
- margin:0;
- background: #000a42;
+    background: var(--grey);
+    padding:0;
+    margin:0;
+    background: #000a42;
 }
 
-#background{
-    position: absolute;
+canvas{
+    position: fixed;
     z-index: -1;
     top:0;
     right:0;
     bottom:0;
     left:0;
+    display: block;
 }
 
-#wrapper{
- display: block;
- z-index: 1;
- width: 100vw;
- height: 100vh;
- color: #fff;
- border: 1px solid #000a42;
+#background svg{
+    opacity: 0.15;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    z-index: -200;
 }
+
+#content-wrapper{
+    display: flex;
+    z-index: 1;
+    color: #fff;
+    border: 1px solid #000a42;
+    width: 100vw;
+    height:100vh;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.riddler-logo{
+    width: 4%;
+    min-width: 60px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.csi-logo{
+    width: 15%;
+    min-width: 250px;
+    position: absolute;
+    top: 35px;
+    right: 30px;
+}
+
+.social-icons{
+    position: absolute;
+    bottom:20px;
+    left: 20px;
+}
+
+.social-icons svg{
+    width: 20px;
+    height:20px;
+    padding: 10px;
+}
+
+.main-content{
+    display: flex;
+    top:25vh;
+    height: 40vh;
+    width: 40vh;
+    border: 1px solid #8EEDE8;
+    padding: 20px;
+    flex-direction:column;
+}
+
+h4{
+    margin:0;
+}
+
+

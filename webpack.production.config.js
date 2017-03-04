@@ -51,6 +51,9 @@ module.exports = {
 		}, {
 			test: /\.css$/,
 			loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[local]!postcss')
+		}, {
+			test : /\.(jp?g|png|gif|svg)$/i,
+			loader : "file-loader?name=/public/media/[name].[ext]"
 		}]
 	},
 	postcss: [
