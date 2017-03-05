@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
 :root{
-    --grey : #fff;
+    --grey : #eee;
     --green : #9defed;
     --blue : #000a42;
     --white : #fff;
@@ -17,6 +17,8 @@ body{
     width: 100vw;
     overflow: hidden;
     font-family: 'Montserrat';
+    font-size: 0.9em;
+    transition: all 0.6s ease;
 }
 
 #overlay{
@@ -26,12 +28,12 @@ body{
     left: 0;
     bottom: 0;
     right: 0;
-    background: var(--grey);
+    background: var(--green_dk);
 }
 
 #progress{
     height: 4px;
-    background: var(--green);
+    background: var(--blue);
     position: absolute;
     width: 0;
     top:0;
@@ -43,7 +45,7 @@ body{
     margin-top: -40px;
     width: 100%;
     text-align: center;
-    color: var(--green);
+    color: var(--blue);
 }
 
 canvas{
@@ -119,6 +121,14 @@ canvas{
     flex-direction:column;
     position: relative;
     left: -25vh;
+    justify-content: center;
+    font-weight: 100;
+}
+
+.title{
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    display: block;
 }
 
 .organizer{
@@ -168,8 +178,9 @@ ul:hover li:first-child:after{
 
 h4{
     margin:0;
-    padding: 30px 0;
+    padding: 0 0 50px 0;
     width: 70%;
+    letter-spacing: 1px;
 }
 
 input{
@@ -180,12 +191,23 @@ input{
     margin:0;
 }
 
-button{
+.submit{
     width: 30%;
-    background: #fff;
+    background: var(--green);
     border: 0;
     height:24px;
     margin:0 0 0 -4px;
+    transition: background 0.6s ease;
+    min-width: 80px;
+    color: var(--blue);
+    cursor: pointer;
+    text-align: center;
+    padding: 0;
+}
+
+.submit:hover{
+    background: var(--green_dk);
+    color: var(--blue);
 }
 
 @media screen and (max-width: 1600px) {
@@ -203,18 +225,39 @@ button{
 
 @media screen and (max-width: 1040px) {
     .main-content{
-        display: flex;
-        height: 50vh;
-        width: 40vh;
-        border: 1px solid var(--green);
-        padding: 20px;
-        flex-direction:column;
         position: relative;
         left:0;
+        font-size: 0.8em;
+        font-weight: 200;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    h4{
+        padding: 0 0 20px 0;
     }
 
     .csi-logo{
         visibility: hidden;
+    }
+
+    .riddler-logo{
+        width: 3%;
+        min-width: 50px;
+        left: 25px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    h4{
+        letter-spacing: 0;
+    }
+    li{
+        background: rgba(0, 10, 66, 0.5);
+    }
+    .details{
+        right: -105px;
     }
 }
 

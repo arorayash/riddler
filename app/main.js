@@ -5,6 +5,7 @@ canvasElem.c();
 const canvas = document.getElementById("canvas-element");
 const main_content = document.querySelector(".main-content");
 const day_display = document.getElementById("day-display");
+const form = document.getElementById("registration-form");
 
 main_content.onmouseover = () => {
 	canvas.style.filter = "blur(5px)";
@@ -32,6 +33,63 @@ var timer = setInterval(() => {
 	}
 
 }, 1000);
+
+
+function get(url) {
+	return new Promise(function(resolve,reject) {
+		var xhttp = new XMLHttpRequest();
+		xhttp.open("GET", url, true);
+		xhttp.onload = function() {
+			if(xhttp.status == 200) {
+				resolve(JSON.parse(xhttp.response))
+			} else {
+				reject(xhttp.statusText);
+			}
+		};
+		xhttp.onerror = function() {
+			reject(xhttp.statusText);
+		};
+		xhttp.send();
+	});
+}
+
+
+
+function post(url, data){
+	console.log("D", data);
+
+	function json(res) {
+		console.log(res);
+		return res.json()
+	};
+	    return fetch(url, {
+		method: 'post',
+		headers: new Headers({
+			"Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
+		}),
+		body: data
+		})
+	//	.then(json)
+		.then(function (data) {
+		    //console.log(data);
+			console.log('Request succeeded with JSON response', data);
+		})
+		.catch(function (error) {
+			console.log('Request failed', error);
+		});
+}
+
+form.onsubmit = (event)=> {
+	event.preventDefault();
+	event.stopPropagation();
+
+	var mail_val = form.mail.value;
+	var str = JSON.stringify(mail_val);
+	console.log(mail_val);
+	var res = post("/form",mail_val);
+	console.log("submit res", res);
+}
+
 
 
 

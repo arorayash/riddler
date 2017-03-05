@@ -22,20 +22,18 @@
 			    tot = img.length;
 
 			    function imgLoaded(){
-			    	setTimeout(function () {
-					    c += 1;
-					    var perc = ((100/tot*c) << 0) +"%";
-					    prog.style.width = perc;
-					    stat.innerHTML = "Loading "+ perc;
-					    bg_svg.style.opacity = "0.15";
-					    if(c===(tot)) return doneLoading();
-				    }, 2000)
+					c += 1;
+                    var perc = ((100/tot*c) << 0) +"%";
+					prog.style.width = perc;
+					stat.innerHTML = "Loading "+ perc;
+					bg_svg.style.opacity = "0.15";
+					if(c===(tot)) return doneLoading();
 			    }
 			    function doneLoading(){
 				    setTimeout(function(){
 					    ovrl.style.opacity = 0;
 					    ovrl.style.display = "none";
-				    }, 3000);
+				    }, 1200);
 			    }
 			    for(var i=0; i<tot; i++) {
 				    var tImg     = new Image();
@@ -127,7 +125,6 @@
         </div>
 
         <div class="social-icons">
-
             <a href="https://twitter.com/csivitu" target="_blank" class="social-icon twitter">
                 <svg id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
                 <g>
@@ -154,12 +151,15 @@
         </div>
 
         <div class="main-content">
-            <h4>An Online Cryptic game... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci amet assumenda illo illum voluptatum. Beatae facere molestias odit repudiandae voluptates. Culpa doloremque in ipsam optio placeat provident quasi qui voluptatum.</h4>
+            <h4>
+                <span class="color-green title">RIDDLER</span>
+                A 2 day national online end-to-end cryptography quiz game, with a profound legacy.  Adipisci amet assumenda illo illum voluptatum. Beatae facere molestias odit repudiandae voluptates. Culpa doloremque in ipsam optio placeat provident quasi qui voluptatum.</h4>
             <p>Pre-register to reserve your spot.</p>
-            <form action="" method="get" id="registration-form">
-                <input type="email" placeholder="e-mail">
-                <button id="apparatus">Pre-register</button>
+            <form method="POST" id="registration-form">
+                <input type="email" name="mail" placeholder="e-mail">
+                <input type="submit" class="submit" name="submit" id="apparatus" value="Pre-register"/>
             </form>
+            <div id="post-result"></div>
         </div>
 
         <div class="details">

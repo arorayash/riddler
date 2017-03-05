@@ -22,7 +22,8 @@
   "homepage": "https://github.com/arorayash/riddler17#readme",
   "dependencies": {
     "babel-cli": "^6.4.0",
-    "babel-core": "^6.22.1"
+    "babel-core": "^6.22.1",
+    "body-parser": "^1.17.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",

@@ -1,5 +1,7 @@
 const path = require('path');
 const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require("fs");
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -8,6 +10,11 @@ const config = require('./webpack.config.js');
 const isDeveloping = process.env.NODE_ENV !== 'production';
 const port = isDeveloping ? 3000 : process.env.PORT;
 const app = express();
+
+var mailObj = {
+	table: []
+};
+var outputJson = JSON.stringify(mailObj);
 
 if (isDeveloping) {
 	const compiler = webpack(config);
@@ -36,6 +43,24 @@ if (isDeveloping) {
 		res.sendFile(path.join(__dirname, 'dist/index.html'));
 	});
 }
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post("/form", function (req, res) {
+	res.setHeader("Content-Type", "application/text");
+	setTimeout(function() {
+		console.log("Req body server",req.body);
+		/*
+		var mailID = req.body || null;
+		mailObj.table.push(mailID);
+		json = JSON.stringify(mailObj);
+		fs.write('mailIDs.json', json, 'utf8', function (err) {
+			if (err) throw err;
+		});
+		*/
+		res.send("Your response is submitted");
+	}, 1000);
+});
 
 app.listen(port, '0.0.0.0', function onStart(err) {
 	if (err) {
