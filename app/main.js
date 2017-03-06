@@ -15,7 +15,7 @@ main_content.onmouseout = () => {
 	canvas.style.filter = "blur(0)";
 }
 
-var cdDate = new Date("Mar 17, 2017 00:00:00").getTime();
+var cdDate = new Date("Mar 24, 2017 00:00:00").getTime();
 
 var timer = setInterval(() => {
 	let now = new Date().getTime();
@@ -33,27 +33,6 @@ var timer = setInterval(() => {
 	}
 
 }, 1000);
-
-
-function get(url) {
-	return new Promise(function(resolve,reject) {
-		var xhttp = new XMLHttpRequest();
-		xhttp.open("GET", url, true);
-		xhttp.onload = function() {
-			if(xhttp.status == 200) {
-				resolve(JSON.parse(xhttp.response))
-			} else {
-				reject(xhttp.statusText);
-			}
-		};
-		xhttp.onerror = function() {
-			reject(xhttp.statusText);
-		};
-		xhttp.send();
-	});
-}
-
-
 
 function post(url, data){
 	console.log("D", data);
@@ -84,10 +63,7 @@ form.onsubmit = (event)=> {
 	event.stopPropagation();
 
 	var mail_val = form.mail.value;
-	var str = JSON.stringify(mail_val);
-	console.log(mail_val);
-	var res = post("/form",mail_val);
-	console.log("submit res", res);
+	var res = post("/form", JSON.stringify(mail_val));
 }
 
 

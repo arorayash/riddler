@@ -46,21 +46,15 @@ if (isDeveloping) {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+/*
 app.post("/form", function (req, res) {
 	res.setHeader("Content-Type", "application/text");
 	setTimeout(function() {
 		console.log("Req body server",req.body);
-		/*
-		var mailID = req.body || null;
-		mailObj.table.push(mailID);
-		json = JSON.stringify(mailObj);
-		fs.write('mailIDs.json', json, 'utf8', function (err) {
-			if (err) throw err;
-		});
-		*/
 		res.send("Your response is submitted");
 	}, 1000);
 });
+*/
 
 app.listen(port, '0.0.0.0', function onStart(err) {
 	if (err) {

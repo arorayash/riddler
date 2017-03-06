@@ -30,10 +30,15 @@
 					if(c===(tot)) return doneLoading();
 			    }
 			    function doneLoading(){
+                    document.querySelector("body").classList.remove("preload");
+				    setTimeout(function(){
+					    ovrl.style.transform = "translateX(100vw)";
+				    }, 1200);
 				    setTimeout(function(){
 					    ovrl.style.opacity = 0;
 					    ovrl.style.display = "none";
-				    }, 1200);
+					    document.querySelector(".main-content").classList.add("translateX");
+				    }, 2500);
 			    }
 			    for(var i=0; i<tot; i++) {
 				    var tImg     = new Image();
@@ -46,9 +51,9 @@
 	    }());
     </script>
 </head>
-<body>
+<body class="preload">
     <div id="overlay">
-        <div id="progstat"></div>
+        <div id="progstat">0%</div>
         <div id="progress"></div>
     </div>
 
@@ -145,7 +150,7 @@
 
         <div class="organizer">
             Organized by
-            <a href="" target="_blank" class="social-icon csi-link tooltip">
+            <a href="https://csivit.com/" target="_blank" class="social-icon csi-link">
                 <span class="color-green">CSI - VITU</span>
             </a>
         </div>
@@ -153,7 +158,10 @@
         <div class="main-content">
             <h4>
                 <span class="color-green title">RIDDLER</span>
-                A 2 day national online end-to-end cryptography quiz game, with a profound legacy.  Adipisci amet assumenda illo illum voluptatum. Beatae facere molestias odit repudiandae voluptates. Culpa doloremque in ipsam optio placeat provident quasi qui voluptatum.</h4>
+                A 3-day <em>National</em> online end-to-end cryptography quiz game, with a profound legacy.
+                This year, choose to be a traveller and be decisive to unlock your next destination. <br>
+                30 brain-wrecking questions, 36 hours on hand.
+            </h4>
             <p>Pre-register to reserve your spot.</p>
             <form method="POST" id="registration-form">
                 <input type="email" name="mail" placeholder="e-mail">
@@ -165,7 +173,7 @@
         <div class="details">
             <ul>
                 <li id="day-display">We are starting soon.</li>
-                <li><em>Game starts on</em> <span class="color-green">17th March, 2017.</span> </li>
+                <li><em>Game starts on</em> <span class="color-green">24th March, 2017.</span> </li>
             </ul>
         </div>
     </div>
