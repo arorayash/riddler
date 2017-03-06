@@ -28,6 +28,10 @@ body{
     -o-transition: none !important;
 }
 
+a{
+    text-decoration: none;
+}
+
 #overlay{
     position: fixed;
     z-index: 9999;
@@ -212,6 +216,14 @@ input{
 
 input[placeholder]{
     color: var(--blue);
+}
+
+.post-result{
+    position: relative;
+    top: 40px;
+    opacity: 0;
+    transition: opacity 0.9s ease;
+    visibility: hidden;
 }
 
 .submit{

@@ -16,6 +16,9 @@
     <meta name="copyright" content="Copyright 2017">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Riddler</title>
+
+    <link rel="icon" type="image/png" href="https://www.dropbox.com/s/fgiz25zb69bi0o3/r_logo_lt.png?dl=1" />
+
     <script>
 	    (function(){
 		    function id(v){
@@ -43,12 +46,12 @@
                     document.querySelector("body").classList.remove("preload");
 				    setTimeout(function(){
 					    ovrl.style.transform = "translateX(100vw)";
-				    }, 1200);
+				    }, 200);
 				    setTimeout(function(){
 					    ovrl.style.opacity = 0;
 					    ovrl.style.display = "none";
 					    document.querySelector(".main-content").classList.add("translateX");
-				    }, 2500);
+				    }, 1500);
 			    }
 			    for(var i=0; i<tot; i++) {
 				    var tImg     = new Image();
@@ -172,18 +175,20 @@
                 This year, choose to be a traveller and be decisive to unlock your next destination. <br>
                 30 brain-wrecking questions, 36 hours on hand.
             </h4>
+            <div class="form-wrapper">
             <p>Pre-register to reserve your spot.</p>
             <form method="POST" id="registration-form">
                 <input type="email" name="mail" placeholder="e-mail">
                 <input type="submit" class="submit" name="submit" id="apparatus" value="Pre-register"/>
             </form>
-            <div id="post-result"></div>
+            </div>
+            <div class="post-result">We have saved you a spot!</div>
         </div>
 
         <div class="details">
             <ul>
                 <li id="day-display">We are starting soon.</li>
-                <li><em>Game starts on</em> <span class="color-green">24th March, 2017.</span> </li>
+                <li><em>Game starts on </em> &nbsp; <span class="color-green"> 24th March, 2017.</span> </li>
             </ul>
         </div>
     </div>

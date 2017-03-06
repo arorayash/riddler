@@ -6,6 +6,8 @@ const canvas = document.getElementById("canvas-element");
 const main_content = document.querySelector(".main-content");
 const day_display = document.getElementById("day-display");
 const form = document.getElementById("registration-form");
+const form_wrap = document.querySelector(".form-wrapper");
+const post_result = document.querySelector(".post-result");
 
 main_content.onmouseover = () => {
 	canvas.style.filter = "blur(5px)";
@@ -51,7 +53,7 @@ function post(url, data){
 	//	.then(json)
 		.then(function (data) {
 		    //console.log(data);
-			console.log('Request succeeded with JSON response', data);
+			//console.log('Request succeeded with JSON response', data);
 		})
 		.catch(function (error) {
 			console.log('Request failed', error);
@@ -61,8 +63,12 @@ function post(url, data){
 form.onsubmit = (event)=> {
 	event.preventDefault();
 	event.stopPropagation();
-
 	var mail_val = form.mail.value;
+	form_wrap.style.visibility = "hidden";
+	form_wrap.style.opacity = "0";
+	post_result.style.visibility = "visible";
+	post_result.style.opacity = "1";
+
 	var res = post("/form", JSON.stringify(mail_val));
 }
 
