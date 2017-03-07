@@ -301,4 +301,9 @@ input[placeholder]{
     }
 }
 
+::selection{
+    background: var(--green_dk);
+    color: var(--blue);
+}
+
 
