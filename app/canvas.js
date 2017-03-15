@@ -130,7 +130,7 @@ var obj = {
 			}
 		}
 
-		console.log(cw);
+		//console.log(cw);
 		instrument();
 
 	}
